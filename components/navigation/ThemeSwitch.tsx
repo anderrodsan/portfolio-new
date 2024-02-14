@@ -15,8 +15,8 @@ const ThemeSwitch: React.FC<Props> = ({}) => {
     const { setTheme } = useTheme();
 
     React.useEffect(() => {
-        setTheme("dark");    
-    }, []);
+        setTheme(mode ? 'light' : 'dark'); // Set the theme based on the current mode
+    }, [mode, setTheme]); // Include mode and setTheme in the dependency array
 
     const changeMode = () => {
         if (mode) {

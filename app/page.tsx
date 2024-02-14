@@ -1,6 +1,4 @@
 import Paintings from "@/components/sections/art/Paintings";
-import BgMap from "@/components/sections/background/BgMap";
-import Map from "@/components/sections/background/Map";
 import Background from "@/components/sections/background/background";
 import Contact from "@/components/sections/contact/Contact";
 import Hero from "@/components/sections/hero/Hero";

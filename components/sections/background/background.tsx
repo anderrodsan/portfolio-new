@@ -6,9 +6,13 @@ import { GraduationCap, List, Map } from 'lucide-react'
 import React, { useState } from 'react'
 import BgCard from './BgCard'
 import { Experience } from '@/utils/types/types'
-import BgMap from './BgMap'
 import { experience } from '@/data/experience'
 import { Button } from '@/components/ui/button'
+import dynamic from 'next/dynamic'
+
+const MapComponent = dynamic(() => import('./BgMap'), {
+    ssr: false, // Disable server-side rendering
+});
 
 const Background: React.FC = () => {
 
@@ -33,7 +37,7 @@ const Background: React.FC = () => {
             
             {map ? (
                 <div className='w-full h-full lg:h-[600px] rounded-md overflow-hidden'>
-                    <BgMap/>
+                    <MapComponent/>
                 </div>
             ):(
                 <div className='relative w-full flex flex-col gap-5'>
