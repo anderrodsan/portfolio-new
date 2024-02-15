@@ -11,7 +11,7 @@ type Props = {
 
 const ThemeSwitch: React.FC<Props> = ({}) => {
 
-    const [mode, setMode] = React.useState<boolean>(true);
+    const [mode, setMode] = React.useState<boolean>(false);
     const { setTheme } = useTheme();
 
     React.useEffect(() => {
