@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Palette } from "lucide-react";
+import { Palette, User } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedTitle from "@/components/framer-motion/AnimatedTitle";
 import AnimatedText from "@/components/framer-motion/AnimatedText";
@@ -76,22 +76,22 @@ const About: React.FC = () => {
       id="about"
     >
       <AnimatedTitle className="title flex-between gap-2">
-        <Palette size={30} strokeWidth={2.5} />
+        <User size={30} strokeWidth={2.5} />
         <p>About</p>
       </AnimatedTitle>
-      <AnimatedText className="grid grid-cols-1 gap-5 lg:grid-cols-2 w-full pt-5 lg:pt-10">
-        <div className="flex flex-col justify-start items-center gap-2">
+      <AnimatedText className="grid grid-cols-1 gap-10 lg:gap-10 lg:grid-cols-2 w-full pt-5">
+        <BackgroundGradient className="flex flex-col justify-center items-center gap-2 lg:h-[450px] p-5 rounded-[12px] text-white">
           <Avatar className="h-60 w-60">
             <AvatarImage src="avatar-light.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <Signature className="w-56 pt-2" />
           <p className="text-lg opacity-60">24, Spain</p>
-        </div>
-        <div className="space-y-5 col-span-1">
+        </BackgroundGradient>
+        <div className="z-40 space-y-5 col-span-1">
           <Tabs
             defaultValue="text"
-            className="flex flex-col items-center lg:items-start w-full px-5 lg:px-0"
+            className="z-40 flex flex-col items-center lg:items-start w-full px-5 lg:px-0"
           >
             <TabsList>
               <TabsTrigger value="text">Description</TabsTrigger>
@@ -117,7 +117,9 @@ const About: React.FC = () => {
                     <div className="flex-start gap-2 flex-wrap">
                       {item.badges.map((badge, index2) => (
                         <div key={index2} className="">
-                          <Badge variant={"secondary"}>{badge}</Badge>
+                          <Badge className="bg-stone-200 dark:bg-slate-700 text-black dark:text-white">
+                            {badge}
+                          </Badge>
                         </div>
                       ))}
                     </div>
@@ -138,7 +140,9 @@ const About: React.FC = () => {
                     <div className="flex-start gap-2 flex-wrap">
                       {item.badges.map((badge, index2) => (
                         <div key={index2} className="">
-                          <Badge variant={"secondary"}>{badge}</Badge>
+                          <Badge className="bg-stone-200 dark:bg-slate-700 text-black dark:text-white">
+                            {badge}
+                          </Badge>
                         </div>
                       ))}
                     </div>

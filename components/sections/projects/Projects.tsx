@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
 
   return (
     <div
-      className={`flex flex-col items-center gap-5 w-full gradient2 py-10 px-5 lg:px-20 border-y`}
+      className={`flex flex-col items-center gap-5 w-full gradient2 py-14 px-5 lg:px-20 border-y`}
       id="projects"
     >
       <AnimatedTitle className="title flex-between gap-2">
@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
         <p>Projects</p>
       </AnimatedTitle>
       <AnimatedText className="flex-center w-full">
-        <p className="flex-1 text-center text-sm">
+        <p className="flex-1 text-center text-sm pb-5">
           A list of projects using frameworks as nextjs 14, tailwindcss, etc.
         </p>
       </AnimatedText>
@@ -39,7 +39,12 @@ const Projects: React.FC = () => {
           </div>
         ))}
       </div>
-      <Button size={"sm"} variant={"secondary"} onClick={handleExpand}>
+      <Button
+        size={"sm"}
+        variant={"default"}
+        onClick={handleExpand}
+        className="z-40"
+      >
         {expand ? "Hide" : `See All ${!expand && `(${projects.length})`}`}
       </Button>
     </div>
