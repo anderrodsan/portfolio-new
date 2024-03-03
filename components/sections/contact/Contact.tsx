@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Image from 'next/image'
-import * as React from 'react'
+import Image from "next/image";
+import * as React from "react";
 
 import {
   Carousel,
@@ -9,60 +9,102 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
-import { Mail, Palette } from 'lucide-react'
-import { motion } from 'framer-motion';
-import AnimatedTitle from '@/components/framer-motion/AnimatedTitle'
-import AnimatedText from '@/components/framer-motion/AnimatedText'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label'
-import Link from 'next/link'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { Separator } from '@/components/ui/separator'
-import { Button } from '@/components/ui/button'
+} from "@/components/ui/carousel";
+import {
+  Clipboard,
+  Mail,
+  MailPlus,
+  MessageCircle,
+  Palette,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import AnimatedTitle from "@/components/framer-motion/AnimatedTitle";
+import AnimatedText from "@/components/framer-motion/AnimatedText";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Contact: React.FC = () => {
+  const [copy, setCopy] = React.useState<boolean>(false);
 
+  const handleButtonClick = () => {
+    setCopy(true);
+    navigator.clipboard.writeText("anderrodsan@gmail.com");
+
+    // After 2 seconds, reset 'copy' to false
+    setTimeout(() => {
+      setCopy(false);
+    }, 2000);
+  };
 
   return (
-    <div className='snap-start flex flex-col items-center py-10 gap-5 w-full h-full gradient2 px-5 border-b' id='contact'>
-      <AnimatedTitle className='title flex-between gap-2'>
-        <Mail size={30} strokeWidth={2.5}/>
+    <div
+      className="relative bg-white dark:bg-black flex-col-center items-center py-32 gap-14 w-full gradient3 px-5 border-b dark:bg-dot-white/[0.3] bg-dot-black/[0.3]"
+      id="contact"
+    >
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <AnimatedTitle className="title flex-between gap-2">
+        <MessageCircle size={30} strokeWidth={2.5} />
         <p>Contact</p>
       </AnimatedTitle>
-      <AnimatedText className='flex-1 flex-col-center gap-3 w-full'>
-        <p className='text-sm md:text-base'>Contact me via</p>
-        <div className='flex-center -mt-2'>
-            <Link href={'https://github.com/anderrodsan'} target='_blank'>
-                <Button variant={'ghost'} className='flex-start gap-2 group'>
-                    <FaGithub className='h-6 w-6 opacity-50 group-hover:scale-105 group-hover:opacity-100 group-hover:-translate-y-1 cursor-pointer transition-transform duration-300 ease-in-out'/>
-                    <p>Github</p>
+      <AnimatedText className="flex-col-center gap-5 w-full">
+        <div className="flex flex-col items-center lg:flex-row gap-8 lg:gap-4 ">
+          <Link href={"https://github.com/anderrodsan"} target="_blank">
+            <Button
+              variant={"ghost"}
+              className="flex-start gap-2 group text-lg"
+            >
+              <FaGithub className="h-6 w-6 opacity-50 group-hover:scale-105 group-hover:opacity-100 group-hover:-translate-y-1 cursor-pointer transition-transform duration-300 ease-in-out" />
+              <p>Github</p>
+            </Button>
+          </Link>
+          <Link
+            href={"https://www.linkedin.com/in/anderrodsan/"}
+            target="_blank"
+          >
+            <Button
+              variant={"ghost"}
+              className="flex-start gap-2 group text-lg"
+            >
+              <FaLinkedin className="h-6 w-6 opacity-50 group-hover:scale-105 group-hover:opacity-100 group-hover:-translate-y-1 cursor-pointer transition-transform duration-300 ease-in-out" />
+              <p>LinkedIn</p>
+            </Button>
+          </Link>
+          <TooltipProvider delayDuration={0}>
+            <Tooltip open={copy}>
+              <TooltipTrigger>
+                <Button
+                  variant={"ghost"}
+                  className="group flex-start gap-2 group text-lg"
+                  onClick={handleButtonClick}
+                >
+                  <MailPlus className="h-6 w-6 opacity-50 group-hover:scale-105 group-hover:opacity-100 group-hover:-translate-y-1 cursor-pointer transition-transform duration-300 ease-in-out" />
+                  <p className="">anderrodsan@gmail.com</p>
                 </Button>
-                
-            </Link>
-            <Link href={'https://www.linkedin.com/in/anderrodsan/'} target='_blank'>
-                <Button variant={'ghost'} className='flex-start gap-2 group'>
-                    <FaLinkedin className='h-6 w-6 opacity-50 group-hover:scale-105 group-hover:opacity-100 group-hover:-translate-y-1 cursor-pointer transition-transform duration-300 ease-in-out'/>
-                    <p>LinkedIn</p>
-                </Button>
-                
-            </Link>  
-        </div>
-        <Separator className='w-full sm:w-2/3 lg:w-1/2'/>
-        <p className='text-sm md:text-base'>Or write me a message</p>  
-        <div className='flex-1 flex flex-col gap-3 h-full w-full sm:w-2/3 lg:w-1/2'>
-            <Label>Email</Label>
-            <Input placeholder='email' className='pb-3'/>
-            <Label>Content</Label>
-            <Textarea placeholder='write me a message' className='flex-1'/>
+              </TooltipTrigger>
+              <TooltipContent className="flex-start gap-2">
+                <div className="flex-start gap-2">
+                  <Clipboard size={"16"} />
+                  <p>Copied!</p>
+                </div>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </AnimatedText>
-      
     </div>
-        
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

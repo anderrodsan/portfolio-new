@@ -3,7 +3,7 @@
 import AnimatedText from '@/components/framer-motion/AnimatedText'
 import AnimatedTitle from '@/components/framer-motion/AnimatedTitle'
 import { GraduationCap, List, Map } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import BgCard from './BgCard'
 import { Experience } from '@/utils/types/types'
 import { experience } from '@/data/experience'
@@ -16,10 +16,10 @@ const MapComponent = dynamic(() => import('./BgMap'), {
 
 const Background: React.FC = () => {
 
-    const [map, setMap] = useState<boolean>(false);
+    const [map, setMap] = useState<boolean>(false);    
   
     return (
-        <div className={`snap-start flex flex-col items-center py-10 gap-5 w-full gradient1 px-5 lg:px-20 ${map ? 'h-full' : 'min-h-full'}`} id='bg'>
+        <div className={`flex flex-col items-center py-14 gap-5 w-full gradient1 px-5 lg:px-20 ${map ? 'h-full' : ''}`} id='bg'>
             <AnimatedTitle className='title flex-between gap-2'>
                 <GraduationCap size={30} strokeWidth={2.5}/>
                 <p>Background</p>

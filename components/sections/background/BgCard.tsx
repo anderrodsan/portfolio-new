@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap } from 'lucide-react'
 import { Experience } from '@/utils/types/types'
+import { BackgroundGradient } from '@/components/ui/background-gradient'
 
 
 type Props = {
@@ -25,7 +26,7 @@ const BgCard: React.FC<Props> = ({item, delay}) => {
       transition={{ delay: delay }}
       className='w-full md:w-1/2 relative'
     >
-      <Card className='p-5 w-full flex-start gap-5 bg-slate-800 text-white dark:text-black dark:bg-slate-200 group hover:bg-slate-700 dark:hover:bg-slate-300'>
+      <BackgroundGradient className="p-5 w-full flex-start gap-5 bg-stone-100 dark:bg-slate-900 group hover:bg-slate-200 dark:hover:bg-slate-800 rounded-[12px]">
         <div className='hidden lg:block w-1/5 rounded-md overflow-hidden'>
           <Link href={item.clink} target='_blank'>
             <Image
@@ -41,21 +42,21 @@ const BgCard: React.FC<Props> = ({item, delay}) => {
                     borderRadius: '6px',
                     transition: 'transform 0.3s ease-in-out'
                 }}
-                className='group-hover:scale-125 cursor-pointer'
+                className='cursor-pointer'
             />  
           </Link>
         </div>
-        <div className='lg:w-4/5'>
+        <div className='lg:w-4/5 space-y-2'>
           <Link href={item.link} target='_blank'>
-              <p className='font-bold text-lg hover:font-bold hover:underline cursor-pointer'>{item.title}</p>
+              <p className='font-bold text-lg hover:opacity-90 cursor-pointer'>{item.title}</p>
           </Link>
           <Link href={item.clink} target='_blank'>
-            <p className='hover:font-bold hover:underline cursor-pointer'>{item.company}</p>
+            <p className='hover:opacity-90 cursor-pointer'>{item.company}</p>
           </Link>
-          <Badge variant={'secondary'}>{item.city}</Badge>
+          <Badge>{item.city}</Badge>
         </div>
         
-      </Card>
+      </BackgroundGradient>
       {item.type ? (
         <div>
             <div className='hidden md:block absolute top-3 -left-[155px] text-right font-bold text-sm'>{item.date}</div>

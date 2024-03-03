@@ -32,9 +32,9 @@ const ThemeSwitch: React.FC<Props> = ({}) => {
   return (
     <div className='flex gap-2'>
         {mode ? (
-            <Moon />
-        ):(
             <Sun />
+        ):(
+            <Moon />
         )}
         <Switch 
             onClick={() => changeMode()}

@@ -7,6 +7,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion';
 import { Project } from '@/utils/types/types'
+import { BackgroundGradient } from '@/components/ui/background-gradient'
+import { useTheme } from 'next-themes'
 
 type Props = {
   project: Project,
@@ -15,20 +17,22 @@ type Props = {
 
 const ProjectCard: React.FC<Props> = ({project, delay}) => {
 
-
+  //detect theme
+  const { theme } = useTheme();
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: delay }}
     >
-      <Card className='p-5 bg-slate-50 dark:bg-slate-950'>
+      <BackgroundGradient className='p-5 bg-slate-50 dark:bg-slate-950 rounded-[12px]'>
         <div className=''>
           <Link href={project.link} target="_blank">
             <div className='relative w-full h-[200px] mb-5 overflow-hidden'>
               <Image
                 alt='Video Image' 
-                src={project.image}
+                src={`${theme == 'dark' ? project.darkimg : project.lightimg}`}
                 fill
                 sizes="100vw"
                 style={{
@@ -53,7 +57,7 @@ const ProjectCard: React.FC<Props> = ({project, delay}) => {
             ))}
           </div>
         </div>
-      </Card>
+      </BackgroundGradient>
     </motion.div>   
   )
 }

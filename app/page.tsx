@@ -1,3 +1,4 @@
+import About from "@/components/sections/about/About";
 import Paintings from "@/components/sections/art/Paintings";
 import Background from "@/components/sections/background/background";
 import Contact from "@/components/sections/contact/Contact";
@@ -6,12 +7,13 @@ import Projects from "@/components/sections/projects/Projects";
 
 export default function Home() {
   return (
-    <main className="h-full w-full bg-slate-50 dark:bg-slate-950 snap-y snap-mandatory overflow-y-scroll scroll-smooth">
-      <Hero/>
-      <Background/>
-      <Projects/>
-      <Paintings/>
-      <Contact/>
+    <main className="relative h-full w-screen bg-slate-50 dark:bg-slate-950 overflow-y-auto scroll-smooth">
+      <Hero />
+      <About />
+      <Background />
+      <Projects />
+      <Paintings />
+      <Contact />
     </main>
   );
 }

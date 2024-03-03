@@ -1,0 +1,39 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+
+type Props = {
+  children: React.ReactNode;
+  className: string;
+};
+
+const AnimatedUp: React.FC<Props> = ({ children, className }) => {
+  const title = {
+    initial: {
+      opacity: 0,
+      y: 30,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "easeInOut",
+        duration: 0.3,
+      },
+    },
+  };
+
+  return (
+    <motion.div
+      variants={title}
+      initial="initial"
+      whileInView="animate"
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export default AnimatedTitle;

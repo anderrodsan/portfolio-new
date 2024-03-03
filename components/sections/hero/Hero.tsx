@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import AnimatedText from '@/components/framer-motion/AnimatedText';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { BackgroundBeams } from '@/components/ui/background-beams';
 
 const Hero: React.FC = () => {
 
@@ -52,12 +53,12 @@ const Hero: React.FC = () => {
     }
 
   return (
-    <div className='relative flex-col-center w-full h-full px-10 lg:px-20 gradient1 snap-start' id='hero'>
+    <div className='relative flex-col-center w-full h-full px-10 lg:px-20 gradient1' id='hero'>
         <motion.div 
             variants={headline}
             initial="initial"
             whileInView="animate"
-            className='font-bold text-4xl md:text-5xl lg:text-6xl text-center h-[100px]'
+            className='z-40 font-bold text-4xl md:text-5xl lg:text-6xl text-center h-[100px]'
         >
             <TypeAnimation 
                 sequence={title}
@@ -71,7 +72,7 @@ const Hero: React.FC = () => {
             variants={description}
             initial="initial"
             whileInView="animate"
-            className='lg:w-1/2 text-center text-sm lg:text-base'
+            className='z-40 lg:w-1/2 text-center text-sm lg:text-base'
         >
             {text}    
             <AnimatedText className='flex-center pt-5 gap-5'>
@@ -83,7 +84,7 @@ const Hero: React.FC = () => {
                 </Link>
             </AnimatedText>
         </motion.p>
-        
+        <BackgroundBeams />
         
     </div>
         

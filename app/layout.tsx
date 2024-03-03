@@ -15,29 +15,24 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-
-  
   return (
-    <html className="" lang="en">
-        <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="flex flex-col h-dvh w-screen">
-              <NavBar/>
-              <main className="flex-1 w-screen overflow-y-auto">
-                {children}
-              </main>
-              <NavBarBottom/>
-            </div>
-            
-          </ThemeProvider>
-        </body>
+    <html className="" lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col h-dvh w-screen">
+            <NavBar />
+            <main className="flex-1 w-screen overflow-y-auto">{children}</main>
+            <NavBarBottom />
+          </div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

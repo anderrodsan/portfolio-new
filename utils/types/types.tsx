@@ -16,7 +16,8 @@ export type Experience = {
 export type Project = {
     title: string;
     text: string;
-    image: string;
+    darkimg: string;
+    lightimg: string;
     date: string;
     link: string;
     badges: string[];
