@@ -110,15 +110,13 @@ const About: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
+                  key={index}
                 >
-                  <BackgroundGradient
-                    key={index}
-                    className="p-3 bg-stone-100 dark:bg-slate-900 rounded-[12px] space-y-2 w-full"
-                  >
+                  <BackgroundGradient className="p-3 bg-stone-100 dark:bg-slate-900 rounded-[12px] space-y-2 w-full">
                     <p className="text-sm">{item.text}</p>
                     <div className="flex-start gap-2 flex-wrap">
-                      {item.badges.map((badge, index) => (
-                        <div key={index} className="">
+                      {item.badges.map((badge, index2) => (
+                        <div key={index2} className="">
                           <Badge variant={"secondary"}>{badge}</Badge>
                         </div>
                       ))}
@@ -133,15 +131,13 @@ const About: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
+                  key={index}
                 >
-                  <BackgroundGradient
-                    key={index}
-                    className="p-3 bg-stone-100 dark:bg-slate-900 rounded-[12px] space-y-2"
-                  >
+                  <BackgroundGradient className="p-3 bg-stone-100 dark:bg-slate-900 rounded-[12px] space-y-2">
                     <p className="text-sm">{item.text}</p>
                     <div className="flex-start gap-2 flex-wrap">
-                      {item.badges.map((badge, index) => (
-                        <div key={index} className="">
+                      {item.badges.map((badge, index2) => (
+                        <div key={index2} className="">
                           <Badge variant={"secondary"}>{badge}</Badge>
                         </div>
                       ))}
