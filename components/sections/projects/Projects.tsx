@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
 
   return (
     <section
-      className={`flex flex-col items-center gap-5 w-full gradient2 py-14 px-5 lg:px-20 border-y my-1`}
+      className={`flex flex-col items-center gap-5 w-full gradient2 py-14 px-5 lg:px-20 border-y`}
       id="projects"
     >
       <AnimatedTitle className="title flex-between gap-2">

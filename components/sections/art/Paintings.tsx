@@ -30,7 +30,7 @@ const Paintings: React.FC = () => {
 
   return (
     <section
-      className="flex flex-col items-center py-14 gap-5 w-full h-full gradient1 px-20 border-b mb-1"
+      className="flex flex-col items-center py-14 gap-5 w-full h-full md:h-auto gradient1 px-20 border-b"
       id="art"
     >
       <AnimatedTitle className="title flex-between gap-2">

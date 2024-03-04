@@ -76,7 +76,7 @@ const About: React.FC = () => {
 
   return (
     <section
-      className="flex flex-col items-center py-14 gap-5 w-full gradient2 px-5 lg:px-20 border-b mt-10"
+      className="flex flex-col items-center py-14 gap-5 w-full gradient2 px-5 lg:px-20 border-b"
       id="about"
     >
       <AnimatedTitle className="title flex-between gap-2">

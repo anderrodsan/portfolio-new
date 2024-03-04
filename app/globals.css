@@ -120,6 +120,10 @@ html {
   @apply bg-gradient-to-b from-stone-50 to-stone-100 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-900;
 }
 
+.gradientnav {
+  @apply bg-gradient-to-b from-stone-200 to-white dark:bg-gradient-to-b dark:from-slate-700 dark:to-black;
+}
+
 html {
   scroll-behavior: smooth;
 }

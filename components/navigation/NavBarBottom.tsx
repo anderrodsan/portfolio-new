@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Code2, GraduationCap, Mail, Palette, User } from "lucide-react";
-import Link from "next/link";
 
 type Props = {};
 
@@ -14,7 +13,7 @@ const NavBarBottom: React.FC<Props> = ({}) => {
       icon: <User size={25} />,
     },
     {
-      label: "Background",
+      label: "Path",
       path: "bg",
       icon: <GraduationCap size={25} />,
     },
@@ -78,21 +77,20 @@ const NavBarBottom: React.FC<Props> = ({}) => {
   };
 
   return (
-    <div className="md:hidden px-5 grid grid-cols-5 border-t">
+    <div className="md:hidden grid grid-cols-5 border-t">
       {items.map((item, index) => (
-        <Link
+        <div
           key={index}
-          href={`#${item.path}`}
           className={`flex flex-col items-center gap-1 py-3 border-t-4 ${
             activeSection == item.path
-              ? "border-t-stone-300 dark:border-t-slate-600 font-bold"
-              : "border-t-white dark:border-t-black"
+              ? "border-t-stone-300 gradientnav dark:border-t-slate-500"
+              : "border-t-white dark:border-t-black bg-white dark:bg-black"
           }`}
           onClick={() => handleClick(item.path)}
         >
           {item.icon}
           <p className="text-xs">{item.label}</p>
-        </Link>
+        </div>
       ))}
     </div>
   );

@@ -19,7 +19,7 @@ const Background: React.FC = () => {
 
   return (
     <section
-      className={`flex flex-col items-center py-14 gap-5 w-full gradient1 px-5 lg:px-20 my-1 ${
+      className={`flex flex-col items-center py-14 gap-5 w-full gradient1 px-5 lg:px-20 ${
         map ? "h-full" : ""
       }`}
       id="bg"
