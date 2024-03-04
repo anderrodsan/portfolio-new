@@ -18,8 +18,8 @@ const Projects: React.FC = () => {
   const visibleProjects = expand ? projects : projects.slice(0, 3);
 
   return (
-    <div
-      className={`flex flex-col items-center gap-5 w-full gradient2 py-14 px-5 lg:px-20 border-y`}
+    <section
+      className={`flex flex-col items-center gap-5 w-full gradient2 py-14 px-5 lg:px-20 border-y my-1`}
       id="projects"
     >
       <AnimatedTitle className="title flex-between gap-2">
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
       >
         {expand ? "Hide" : `See All ${!expand && `(${projects.length})`}`}
       </Button>
-    </div>
+    </section>
   );
 };
 

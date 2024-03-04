@@ -61,6 +61,10 @@ const About: React.FC = () => {
       badges: ["Figma", "Canva", "Shadcn"],
     },
     {
+      text: "AI",
+      badges: ["Chat GPT", "Midjourney", "Perplexity"],
+    },
+    {
       text: "Adobe Bundle",
       badges: ["Photoshop", "Premiere Pro", "Illustrator"],
     },
@@ -71,8 +75,8 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div
-      className="flex flex-col items-center py-14 gap-5 w-full gradient2 px-5 lg:px-20 border-b"
+    <section
+      className="flex flex-col items-center py-14 gap-5 w-full gradient2 px-5 lg:px-20 border-b mt-10"
       id="about"
     >
       <AnimatedTitle className="title flex-between gap-2">
@@ -153,7 +157,7 @@ const About: React.FC = () => {
           </Tabs>
         </div>
       </AnimatedText>
-    </div>
+    </section>
   );
 };
 

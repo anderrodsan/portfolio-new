@@ -49,8 +49,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div
-      className="relative bg-white dark:bg-black flex-col-center items-center py-32 gap-14 w-full gradient3 px-5 border-b dark:bg-dot-white/[0.3] bg-dot-black/[0.3]"
+    <section
+      className="relative bg-white dark:bg-black flex-col-center items-center py-32 gap-14 w-full gradient3 px-5 border-b dark:bg-dot-white/[0.2] bg-dot-black/[0.2]"
       id="contact"
     >
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
@@ -103,7 +103,7 @@ const Contact: React.FC = () => {
           </TooltipProvider>
         </div>
       </AnimatedText>
-    </div>
+    </section>
   );
 };
 

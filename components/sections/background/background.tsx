@@ -18,8 +18,8 @@ const Background: React.FC = () => {
   const [map, setMap] = useState<boolean>(false);
 
   return (
-    <div
-      className={`flex flex-col items-center py-14 gap-5 w-full gradient1 px-5 lg:px-20 ${
+    <section
+      className={`flex flex-col items-center py-14 gap-5 w-full gradient1 px-5 lg:px-20 my-1 ${
         map ? "h-full" : ""
       }`}
       id="bg"
@@ -67,7 +67,7 @@ const Background: React.FC = () => {
           ))}
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

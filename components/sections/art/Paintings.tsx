@@ -29,8 +29,8 @@ const Paintings: React.FC = () => {
   ];
 
   return (
-    <div
-      className="flex flex-col items-center py-14 gap-5 w-full gradient1 px-20 border-b"
+    <section
+      className="flex flex-col items-center py-14 gap-5 w-full h-full gradient1 px-20 border-b mb-1"
       id="art"
     >
       <AnimatedTitle className="title flex-between gap-2">
@@ -76,7 +76,7 @@ const Paintings: React.FC = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </div>
+    </section>
   );
 };
 

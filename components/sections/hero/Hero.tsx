@@ -7,6 +7,7 @@ import AnimatedText from "@/components/framer-motion/AnimatedText";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { MovingButton } from "@/components/ui/moving-border";
 
 const Hero: React.FC = () => {
   const title = [
@@ -97,7 +98,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div
+    <section
       className="relative flex-col-center w-full h-full px-10 lg:px-20 gradient1 border-b"
       id="hero"
     >
@@ -124,19 +125,17 @@ const Hero: React.FC = () => {
         {text}
         <AnimatedText className="flex-center pt-5 gap-5">
           <Link href={"#projects"}>
-            <Button variant={"secondary"} size={"sm"}>
-              See Projects
-            </Button>
+            <MovingButton>See Projects</MovingButton>
           </Link>
           <Link href={"#contact"}>
-            <Button size={"sm"} variant={"default"}>
+            <Button size={"sm"} variant={"ghost"}>
               Contact Me
             </Button>
           </Link>
         </AnimatedText>
       </motion.p>
       <BackgroundBeams />
-    </div>
+    </section>
   );
 };
 

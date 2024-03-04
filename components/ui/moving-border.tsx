@@ -56,7 +56,7 @@ export function MovingButton({
 
       <div
         className={cn(
-          "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
+          "relative bg-white hover:bg-stone-100 dark:hover:bg-slate-900 dark:bg-black border border-stone-200 dark:border-slate-800 backdrop-blur-xl flex items-center justify-center w-full h-full text-sm antialiased",
           className
         )}
         style={{
