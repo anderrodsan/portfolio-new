@@ -33,6 +33,7 @@ export default function RootLayout({
         <meta property="og:image" content={openGraphImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://andr-portfolio.vercel.app" />
       </Head>
       <html className="" lang="en" suppressHydrationWarning>
         <body className={inter.className}>
