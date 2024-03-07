@@ -30,7 +30,6 @@ const NavBar: React.FC<Props> = ({}) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Set the name of the active section in the state
-          console.log(entry);
           setActiveSection(entry.target.id);
         }
       });
