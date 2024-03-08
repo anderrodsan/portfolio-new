@@ -24,17 +24,12 @@ export default function RootLayout({
     <>
       <Head>
         {/* Open Graph Meta Tags */}
+        <meta property="og:title" content={metadata.title as string} />
         <meta
-          name="title"
-          property="og:title"
-          content={metadata.title as string}
-        />
-        <meta
-          name="description"
           property="og:description"
           content={metadata.description as string}
         />
-        <meta name="image" property="og:image" content="/opengraph-image.jpg" />
+        <meta property="og:image" content="opengraph-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
@@ -42,7 +37,7 @@ export default function RootLayout({
           content="https://www.andr-portfolio.vercel.app"
         />
         <meta property="og:type" content="portfolio"></meta>
-        <meta name="author" content="Ander Rodriguez"></meta>
+        <meta property="og:author" content="Ander Rodriguez"></meta>
 
         {/* Umami.ls for site analytics */}
         <script
