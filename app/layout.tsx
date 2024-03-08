@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import NavBar from "@/components/navigation/NavBar";
 import NavBarBottom from "@/components/navigation/NavBarBottom";
 import Head from "next/head";
+import ScrollUp from "@/components/shared/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const openGraphImage = "/opengraph-image.jpg";
-
   return (
     <>
       <Head>
@@ -30,10 +29,13 @@ export default function RootLayout({
           property="og:description"
           content={metadata.description as string}
         />
-        <meta property="og:image" content={openGraphImage} />
+        <meta property="og:image" content={"./opengraph-image.jpg"} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="https://andr-portfolio.vercel.app" />
+        <meta
+          property="og:url"
+          content="https://www.andr-portfolio.vercel.app"
+        />
       </Head>
       <html className="" lang="en" suppressHydrationWarning>
         <body className={inter.className}>
@@ -45,7 +47,7 @@ export default function RootLayout({
           >
             <div className="flex flex-col h-dvh w-screen">
               <NavBar />
-              <main className="flex-1 w-screen overflow-y-auto">
+              <main className="relative flex-1 w-screen overflow-y-auto">
                 {children}
               </main>
               <NavBarBottom />

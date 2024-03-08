@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { MovingButton } from "@/components/ui/moving-border";
+import ScrollIndicator from "./ScrollDown";
 
 const Hero: React.FC = () => {
   const title = [
@@ -99,13 +100,16 @@ const Hero: React.FC = () => {
 
   return (
     <section
-      className="relative flex-col-center w-full h-full px-10 lg:px-20 gradient1 border-b"
+      className="relative flex-col-center w-full px-10 lg:px-20 gradient1 border-b"
+      style={{ height: "calc(100% - 20px)" }}
       id="hero"
     >
+      <ScrollIndicator />
       <motion.div
         variants={headline}
         initial="initial"
         whileInView="animate"
+        viewport={{ once: true }}
         className="z-40 font-bold text-4xl md:text-5xl lg:text-6xl text-center h-[100px]"
       >
         <TypeAnimation
@@ -120,6 +124,7 @@ const Hero: React.FC = () => {
         variants={description}
         initial="initial"
         whileInView="animate"
+        viewport={{ once: true }}
         className="z-40 lg:w-1/2 text-center text-sm lg:text-base"
       >
         {text}

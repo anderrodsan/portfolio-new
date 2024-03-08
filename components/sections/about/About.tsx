@@ -97,7 +97,7 @@ const About: React.FC = () => {
             defaultValue="text"
             className="z-40 flex flex-col items-center lg:items-start w-full px-5 lg:px-0"
           >
-            <TabsList>
+            <TabsList className="sticky top-5 z-40 md:static md:top-auto">
               <TabsTrigger value="text">Description</TabsTrigger>
               <TabsTrigger value="tech">Tech Stacks</TabsTrigger>
               <TabsTrigger value="tools">Tools</TabsTrigger>

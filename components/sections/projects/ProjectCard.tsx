@@ -23,6 +23,7 @@ const ProjectCard: React.FC<Props> = ({ project, delay }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: delay }}
+      viewport={{ once: true }}
     >
       <BackgroundGradient className="p-5 bg-slate-50 dark:bg-slate-950 rounded-[12px]">
         <div className="">

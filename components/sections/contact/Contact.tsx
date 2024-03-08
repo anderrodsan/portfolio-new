@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import {
   Clipboard,
+  Copyright,
   Mail,
   MailPlus,
   MessageCircle,
@@ -103,6 +104,12 @@ const Contact: React.FC = () => {
           </TooltipProvider>
         </div>
       </AnimatedText>
+      <div className="absolute bottom-5 left-5 md:left-16 flex-center gap-5 opacity-50 text-sm">
+        <p className="flex-start gap-2">
+          <Copyright size={16} /> 2024
+        </p>
+        <p>andr (&R)</p>
+      </div>
     </section>
   );
 };

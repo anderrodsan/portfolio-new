@@ -21,6 +21,7 @@ const BgCard: React.FC<Props> = ({ item, delay }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: delay }}
+      viewport={{ once: true }}
       className="w-full md:w-1/2 relative"
     >
       <BackgroundGradient className="p-5 w-full flex-start gap-5 bg-stone-100 dark:bg-slate-900 group rounded-[12px]">

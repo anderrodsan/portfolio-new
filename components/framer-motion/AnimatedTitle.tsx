@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 type Props = {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 };
 
 const AnimatedTitle: React.FC<Props> = ({ children, className }) => {
@@ -30,6 +30,7 @@ const AnimatedTitle: React.FC<Props> = ({ children, className }) => {
       initial="initial"
       whileInView="animate"
       className={className}
+      viewport={{ once: true }}
     >
       {children}
     </motion.div>

@@ -54,6 +54,7 @@ const Paintings: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 * index }}
                 className="h-[350px] sm:h-[400px] overflow-hidden rounded-md"
+                viewport={{ once: true }}
               >
                 <Image
                   alt="Video Image"
