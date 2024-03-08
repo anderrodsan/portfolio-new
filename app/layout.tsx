@@ -5,14 +5,24 @@ import { ThemeProvider } from "@/components/theme-provider";
 import NavBar from "@/components/navigation/NavBar";
 import NavBarBottom from "@/components/navigation/NavBarBottom";
 import Head from "next/head";
-import ScrollUp from "@/components/shared/ScrollToTop";
+import image from "@/public/opengraph-image.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://andr-portfolio.vercel.app"),
   title: "My Portfolio",
   description:
     "My newest web portfolio using latest technologies and frameworks as nextjs 14, Tailwind, Shadcn, Aceternity, Lucide-React, Leaflet, etc.",
+  openGraph: {
+    images: [
+      {
+        url: image.src,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -38,10 +48,7 @@ export default function RootLayout({
           property="og:description"
           content="My newest web portfolio using latest technologies and frameworks as nextjs 14, Tailwind, Shadcn, Aceternity, Lucide-React, Leaflet, etc."
         />
-        <meta
-          property="og:image"
-          content="https://andr-portfolio.vercel.app/opengraph-image.jpg"
-        />
+        <meta property="og:image" content={image.src} />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -55,10 +62,7 @@ export default function RootLayout({
           name="twitter:description"
           content="My newest web portfolio using latest technologies and frameworks as nextjs 14, Tailwind, Shadcn, Aceternity, Lucide-React, Leaflet, etc."
         />
-        <meta
-          name="twitter:image"
-          content="https://andr-portfolio.vercel.app/opengraph-image.jpg"
-        />
+        <meta name="twitter:image" content={image.src} />
 
         {/* Umami.ls for site analytics */}
         <script
