@@ -40,7 +40,7 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="https://opengraph.b-cdn.net/production/documents/4cfb863b-6eb9-4369-9425-dc824529c502.jpg?token=2znktxK-hDaaIsnCyf5O4VSnNk1qJe7NjI8Ewrq5JXY&height=630&width=1200&expires=33245898281"
+          content="https://andr-portfolio.vercel.app/opengraph-image.jpg"
         />
 
         {/* Twitter Meta Tags */}
@@ -57,7 +57,7 @@ export default function RootLayout({
         />
         <meta
           name="twitter:image"
-          content="https://opengraph.b-cdn.net/production/documents/4cfb863b-6eb9-4369-9425-dc824529c502.jpg?token=2znktxK-hDaaIsnCyf5O4VSnNk1qJe7NjI8Ewrq5JXY&height=630&width=1200&expires=33245898281"
+          content="https://andr-portfolio.vercel.app/opengraph-image.jpg"
         />
 
         {/* Umami.ls for site analytics */}
