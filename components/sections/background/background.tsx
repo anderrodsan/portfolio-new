@@ -34,7 +34,11 @@ const Background: React.FC = () => {
           A list of my education and working experience
         </p>
         <div className="flex justify-end">
-          <Button size={"sm"} variant={"default"} onClick={() => setMap(!map)}>
+          <Button
+            size={"sm"}
+            variant={"secondary"}
+            onClick={() => setMap(!map)}
+          >
             {map ? (
               <div className="flex-start gap-2">
                 <List /> See List

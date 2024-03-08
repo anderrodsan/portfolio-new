@@ -106,9 +106,10 @@ const Contact: React.FC = () => {
       </AnimatedText>
       <div className="absolute bottom-5 left-5 md:left-16 flex-center gap-5 opacity-50 text-sm">
         <p className="flex-start gap-2">
-          <Copyright size={16} /> 2024
+          <Copyright size={16} /> March 2024
         </p>
-        <p>andr (&R)</p>
+        <p>Ander Rodriguez</p>
+        <p>&R</p>
       </div>
     </section>
   );

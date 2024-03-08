@@ -53,7 +53,9 @@ const BgCard: React.FC<Props> = ({ item, delay }) => {
           <Link href={item.clink} target="_blank">
             <p className="hover:opacity-90 cursor-pointer">{item.company}</p>
           </Link>
-          <Badge>{item.city}</Badge>
+          <Badge className="bg-stone-200 dark:bg-slate-700 text-black dark:text-white">
+            {item.city}
+          </Badge>
         </div>
       </BackgroundGradient>
       {item.type ? (

@@ -25,7 +25,7 @@ const ProjectCard: React.FC<Props> = ({ project, delay }) => {
       transition={{ delay: delay }}
       viewport={{ once: true }}
     >
-      <BackgroundGradient className="p-5 bg-slate-50 dark:bg-slate-950 rounded-[12px]">
+      <BackgroundGradient className="p-5 bg-stone-100 dark:bg-slate-900 rounded-[12px]">
         <div className="">
           <Link href={project.link} target="_blank">
             <div className="relative w-full h-[200px] mb-5 overflow-hidden">
@@ -50,7 +50,9 @@ const ProjectCard: React.FC<Props> = ({ project, delay }) => {
           <div className="flex-start gap-2 flex-wrap pt-3">
             {project.badges.map((badge, index) => (
               <div key={index}>
-                <Badge>{badge}</Badge>
+                <Badge className="bg-stone-200 dark:bg-slate-700 text-black dark:text-white">
+                  {badge}
+                </Badge>
               </div>
             ))}
           </div>

@@ -41,9 +41,9 @@ const Projects: React.FC = () => {
       </div>
       <Button
         size={"sm"}
-        variant={"default"}
+        variant={"secondary"}
         onClick={handleExpand}
-        className="z-40"
+        className="z-40 mt-5"
       >
         {expand ? "Hide" : `See All ${!expand && `(${projects.length})`}`}
       </Button>
