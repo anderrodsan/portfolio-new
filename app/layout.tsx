@@ -23,21 +23,42 @@ export default function RootLayout({
   return (
     <>
       <Head>
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={metadata.title as string} />
+        {/* HTML meta tags */}
+        <title>My Portfolio</title>
+        <meta
+          name="description"
+          content="My newest web portfolio using latest technologies and frameworks as nextjs 14, Tailwind, Shadcn, Aceternity, Lucide-React, Leaflet, etc."
+        />
+
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content="https://andr-portfolio.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="My Portfolio" />
         <meta
           property="og:description"
-          content={metadata.description as string}
+          content="My newest web portfolio using latest technologies and frameworks as nextjs 14, Tailwind, Shadcn, Aceternity, Lucide-React, Leaflet, etc."
         />
-        <meta property="og:image" content="opengraph-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
         <meta
-          property="og:url"
-          content="https://www.andr-portfolio.vercel.app"
+          property="og:image"
+          content="https://opengraph.b-cdn.net/production/documents/4cfb863b-6eb9-4369-9425-dc824529c502.jpg?token=2znktxK-hDaaIsnCyf5O4VSnNk1qJe7NjI8Ewrq5JXY&height=630&width=1200&expires=33245898281"
         />
-        <meta property="og:type" content="portfolio"></meta>
-        <meta property="og:author" content="Ander Rodriguez"></meta>
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="andr-portfolio.vercel.app" />
+        <meta
+          property="twitter:url"
+          content="https://andr-portfolio.vercel.app/"
+        />
+        <meta name="twitter:title" content="My Portfolio" />
+        <meta
+          name="twitter:description"
+          content="My newest web portfolio using latest technologies and frameworks as nextjs 14, Tailwind, Shadcn, Aceternity, Lucide-React, Leaflet, etc."
+        />
+        <meta
+          name="twitter:image"
+          content="https://opengraph.b-cdn.net/production/documents/4cfb863b-6eb9-4369-9425-dc824529c502.jpg?token=2znktxK-hDaaIsnCyf5O4VSnNk1qJe7NjI8Ewrq5JXY&height=630&width=1200&expires=33245898281"
+        />
 
         {/* Umami.ls for site analytics */}
         <script
